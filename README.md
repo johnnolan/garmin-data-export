@@ -1,5 +1,7 @@
 # Garmin local sync
 
+> VIBECODE ALERT
+
 A small, read-only Python application that archives Garmin Connect data to immutable raw files and
 loads both summary and detailed time-series data into SQLite. It is intended to produce a dependable
 local dataset for later analysis; it does not provide analysis, recommendations, a server, or a UI.
