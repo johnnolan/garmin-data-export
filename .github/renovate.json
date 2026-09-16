@@ -1,0 +1,74 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    "helpers:pinGitHubActionDigests",
+    ":enableVulnerabilityAlerts"
+  ],
+  "enabledManagers": [
+    "pep621",
+    "github-actions"
+  ],
+  "timezone": "Etc/UTC",
+  "schedule": [
+    "* 4-7 * * 1"
+  ],
+  "prConcurrentLimit": 5,
+  "semanticCommits": "enabled",
+  "semanticCommitType": "chore",
+  "semanticCommitScope": "deps",
+  "labels": [
+    "dependencies",
+    "security"
+  ],
+  "minimumReleaseAge": "3 days",
+  "internalChecksFilter": "strict",
+  "separateMajorMinor": true,
+  "packageRules": [
+    {
+      "description": "Group non-major Python dependency updates",
+      "matchManagers": [
+        "pep621"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "groupName": "Python non-major updates",
+      "groupSlug": "python-non-major",
+      "addLabels": [
+        "python"
+      ]
+    },
+    {
+      "description": "Label GitHub Actions updates",
+      "matchManagers": [
+        "github-actions"
+      ],
+      "addLabels": [
+        "github-actions"
+      ]
+    },
+    {
+      "description": "Group non-major GitHub Actions updates",
+      "matchManagers": [
+        "github-actions"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch",
+        "digest",
+        "pinDigest"
+      ],
+      "groupName": "GitHub Actions non-major updates",
+      "groupSlug": "github-actions-non-major"
+    },
+    {
+      "description": "Keep each major dependency update in its own pull request",
+      "matchUpdateTypes": [
+        "major"
+      ],
+      "groupName": null
+    }
+  ]
+}
