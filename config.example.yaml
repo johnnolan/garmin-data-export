@@ -1,0 +1,15 @@
+# Paths are resolved relative to this file. Copy to config.yaml to customise.
+data_directory: ./data
+database: ./data/garmin.db
+token_store: ~/.garminconnect
+
+sync:
+  default_days: 7
+  request_delay_seconds: 0.5
+  activity_page_size: 100
+  # Optional: include health data before your oldest activity during --all.
+  # historical_start_date: 2018-01-01
+
+raw:
+  store_json: true
+  store_fit: true
