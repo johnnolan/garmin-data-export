@@ -59,7 +59,7 @@ class GarminReader:
             ("training_readiness", "get_training_readiness", (day_text,)),
             ("training_status", "get_training_status", (day_text,)),
             ("max_metrics", "get_max_metrics", (day_text,)),
-            ("race_predictions", "get_race_predictions", (day_text, day_text)),
+            ("race_predictions", "get_race_predictions", (day_text, day_text, "daily")),
             ("endurance_score", "get_endurance_score", (day_text, day_text)),
             ("hill_score", "get_hill_score", (day_text, day_text)),
             ("respiration", "get_respiration_data", (day_text,)),
